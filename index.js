@@ -9,12 +9,12 @@ app.use(
     origin: true,
   })
 );
+const detectRouter = require("./routes/detect");
+app.use("/detect", detectRouter);
+
 app.options("*", cors());
 
 app.get("/", (req, res) => res.send("Working!!!"));
-
-const detectRouter = require("./routes/detect");
-app.use("/detect", detectRouter);
 
 app.listen(process.env.PORT || 3000, function () {
   console.log("server running on port 3000", "");
