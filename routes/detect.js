@@ -1,5 +1,7 @@
+require("dotenv").config();
+
 const DetectLanguage = require("detectlanguage");
-const detectlanguage = new DetectLanguage("be352a8c747187e1f629a36365e2ad71");
+const detectlanguage = new DetectLanguage(process.env.API_KEY);
 
 const express = require("express");
 const router = express.Router();
