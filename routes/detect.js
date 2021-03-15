@@ -8,7 +8,7 @@ router.get("/", async (req, res) => {
   try {
     detectlanguage.detect(req.body).then((result) => {
       console.log(req.body);
-      res.json({ result: "result" });
+      res.json({ result: result, test: "Working" });
     });
   } catch (err) {
     res.status(500).json({ message: err.message });
