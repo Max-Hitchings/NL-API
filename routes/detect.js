@@ -7,7 +7,14 @@ const router = express.Router();
 router.get("/", async (req, res) => {
   try {
     detectlanguage.detect(req.body.text).then((result) => {
-      console.log(req.body.text, result);
+      //console.log(req.body.text, result);
+
+      for (i in result) {
+        for (x in result[i]) {
+          console.log(result[i][x]);
+        }
+      }
+
       res.json({ result: result, test: "Working" });
     });
   } catch (err) {
