@@ -6,8 +6,8 @@ const router = express.Router();
 
 router.get("/", async (req, res) => {
   try {
-    detectlanguage.detect(req.body).then((result) => {
-      console.log(req.body);
+    detectlanguage.detect(req.body.text).then((result) => {
+      console.log(req.body.text, result);
       res.json({ result: result, test: "Working" });
     });
   } catch (err) {
