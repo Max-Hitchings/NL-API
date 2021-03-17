@@ -9,15 +9,12 @@ const router = express.Router();
 router.get("/", async (req, res) => {
   try {
     detectlanguage.detect(req.body.text).then((result) => {
-      //console.log(req.body.text, result);
-
       for (i in result) {
         for (x in result[i]) {
-          console.log(result[i][x]);
+          result[i][x].language != "en" ? delete result[i][x] : "";
         }
       }
-
-      res.status(200).json({ result: result, test: "Working" });
+      res.status(200).json({ result: result });
     });
   } catch (err) {
     res.status(500).json({ message: err.message });

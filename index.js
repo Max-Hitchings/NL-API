@@ -14,7 +14,7 @@ app.use("/detect", detectRouter);
 
 app.options("*", cors());
 
-app.get("/", (req, res) => res.send("Working!!!"));
+app.get("/", (req, res) => res.send("API for www.max-hichings.com"));
 
 app.listen(process.env.PORT || 3000, function () {
   console.log("server running on port 3000", "");
