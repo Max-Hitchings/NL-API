@@ -2,3 +2,4 @@
 *.rest
 test.py
 .env
+test.*
