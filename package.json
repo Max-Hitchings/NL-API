@@ -6,7 +6,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "detectlanguage": "^2.1.0",
-    "dotenv": "^9.0.1",
+    "dotenv": "^9.0.2",
     "express": "^4.16.4"
   },
   "devDependencies": {
